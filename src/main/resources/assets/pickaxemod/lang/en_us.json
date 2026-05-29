@@ -1,0 +1,13 @@
+{
+  "itemGroup.pickaxemod": "Example Mod Tab",
+  "block.pickaxemod.example_block": "Example Block",
+  "item.pickaxemod.example_item": "Example Item",
+
+  "pickaxemod.configuration.title": "Pickaxe Mod Configs",
+  "pickaxemod.configuration.section.pickaxemod.common.toml": "Pickaxe Mod Configs",
+  "pickaxemod.configuration.section.pickaxemod.common.toml.title": "Pickaxe Mod Configs",
+  "pickaxemod.configuration.items": "Item List",
+  "pickaxemod.configuration.logDirtBlock": "Log Dirt Block",
+  "pickaxemod.configuration.magicNumberIntroduction": "Magic Number Text",
+  "pickaxemod.configuration.magicNumber": "Magic Number"
+}
