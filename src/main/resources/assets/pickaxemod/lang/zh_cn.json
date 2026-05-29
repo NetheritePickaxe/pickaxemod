@@ -1,6 +1,6 @@
 {
-  "itemGroup.pickaxemod.pickaxe_tab": "Pickaxe Mod",
-  "item.pickaxemod.pickaxe_e": "pickaxe_e",
+  "itemGroup.pickaxemod.pickaxe_tab": "合金模组",
+  "item.pickaxemod.pickaxe_e": "合金搞e",
 
   "pickaxemod.configuration.title": "Pickaxe Mod Configs",
   "pickaxemod.configuration.section.pickaxemod.common.toml": "Pickaxe Mod Configs",
