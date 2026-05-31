@@ -2,7 +2,6 @@ package com.pickaxe.pickaxemod.block;
 
 import com.pickaxe.pickaxemod.PickaxeMod;
 import com.pickaxe.pickaxemod.item.ModItems;
-import net.minecraft.world.damagesource.DamageEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -18,7 +17,7 @@ public class ModBlocks {
             DeferredRegister.createBlocks(PickaxeMod.MODID);
 
     public static final DeferredBlock<Block> PICKAXE_BLOCK =
-            registerBlocks("pickaxe_block", () -> new Block(BlockBehaviour.Properties.of().strength(1.5F, 6.0F)));
+            registerBlocks("pickaxe_block", () -> new ModDirectionalBlock(BlockBehaviour.Properties.of().strength(1.5F, 6.0F)));
 
     private static <T extends Block> void registerBlockItems(String name, DeferredBlock<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

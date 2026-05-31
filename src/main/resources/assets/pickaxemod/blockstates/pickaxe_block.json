@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "pickaxemod:block/pickaxe_block",
+      "y": 90
+    },
+    "facing=north": {
       "model": "pickaxemod:block/pickaxe_block"
+    },
+    "facing=south": {
+      "model": "pickaxemod:block/pickaxe_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pickaxemod:block/pickaxe_block",
+      "y": 270
     }
   }
 }
