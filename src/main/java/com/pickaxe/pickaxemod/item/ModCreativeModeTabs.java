@@ -1,6 +1,7 @@
 package com.pickaxe.pickaxemod.item;
 
 import com.pickaxe.pickaxemod.PickaxeMod;
+import com.pickaxe.pickaxemod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,6 +21,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("itemGroup.pickaxemod.pickaxe_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.PICKAXE_E);
+                        output.accept(ModBlocks.PICKAXE_BLOCK);
                     }).build());
 
     public static  void register(IEventBus eventBus) {

@@ -1,5 +1,6 @@
 package com.pickaxe.pickaxemod;
 
+import com.pickaxe.pickaxemod.block.ModBlocks;
 import com.pickaxe.pickaxemod.item.ModCreativeModeTabs;
 import com.pickaxe.pickaxemod.item.ModItems;
 import org.slf4j.Logger;
@@ -48,6 +49,7 @@ public class PickaxeMod {
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.

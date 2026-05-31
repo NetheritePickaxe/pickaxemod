@@ -1,7 +1,7 @@
 {
   "itemGroup.pickaxemod.pickaxe_tab": "合金模组",
   "item.pickaxemod.pickaxe_e": "合金搞e",
-
+  "block.pickaxemod.pickaxe_block": "合金方块",
   "pickaxemod.configuration.title": "Pickaxe Mod Configs",
   "pickaxemod.configuration.section.pickaxemod.common.toml": "Pickaxe Mod Configs",
   "pickaxemod.configuration.section.pickaxemod.common.toml.title": "Pickaxe Mod Configs",
