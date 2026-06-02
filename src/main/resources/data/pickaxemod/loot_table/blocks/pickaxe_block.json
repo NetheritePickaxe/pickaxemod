@@ -3,6 +3,16 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "pickaxemod:pickaxe_e"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:survives_explosion"
@@ -11,7 +21,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "pickaxemod:pickaxe_e"
+          "name": "minecraft:netherite_block"
         }
       ],
       "rolls": 1.0
