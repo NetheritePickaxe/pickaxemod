@@ -3,7 +3,6 @@ package com.pickaxe.pickaxemod.datagen;
 import com.pickaxe.pickaxemod.PickaxeMod;
 import com.pickaxe.pickaxemod.block.ModBlocks;
 import net.minecraft.data.PackOutput;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 

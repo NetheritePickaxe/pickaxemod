@@ -1,7 +1,6 @@
 package com.pickaxe.pickaxemod;
 
 import com.pickaxe.pickaxemod.datagen.*;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
