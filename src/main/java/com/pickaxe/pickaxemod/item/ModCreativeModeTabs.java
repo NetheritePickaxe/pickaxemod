@@ -21,6 +21,8 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("itemGroup.pickaxemod.pickaxe_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.PICKAXE_E);
+                        output.accept(ModItems.SHIT);
+                        output.accept(ModItems.EVERLASTING_SHIT);
                         output.accept(ModBlocks.PICKAXE_BLOCK);
                     }).build());
 

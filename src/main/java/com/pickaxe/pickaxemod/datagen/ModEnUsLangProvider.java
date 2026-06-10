@@ -13,10 +13,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add(ModItems.PICKAXE_E.get(),"pickaxe_e");
+        add("itemGroup.pickaxemod.pickaxe_tab","Pickaxe Mod");
+
+        add(ModItems.PICKAXE_E.get(), "pickaxe_e");
+        add(ModItems.SHIT.get(), "shit");
+        add(ModItems.EVERLASTING_SHIT.get(), "everlasting shit");
 
         add(ModBlocks.PICKAXE_BLOCK.get(),"pickaxe block");
-
-        add("itemGroup.pickaxemod.pickaxe_tab","Pickaxe Mod");
     }
 }

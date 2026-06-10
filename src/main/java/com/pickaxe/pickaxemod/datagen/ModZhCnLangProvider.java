@@ -16,6 +16,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("itemGroup.pickaxemod.pickaxe_tab","合金模组");
 
         add(ModItems.PICKAXE_E.get(),"合金搞e");
+        add(ModItems.SHIT.get(), "答辩");
+        add(ModItems.EVERLASTING_SHIT.get(), "永恒答辩");
 
         add(ModBlocks.PICKAXE_BLOCK.get(),"合金方块");
     }

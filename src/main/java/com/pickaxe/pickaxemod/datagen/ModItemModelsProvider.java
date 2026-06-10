@@ -14,5 +14,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         basicItem(ModItems.PICKAXE_E.get());
+        basicItem(ModItems.SHIT.get());
+        basicItem(ModItems.EVERLASTING_SHIT.get());
     }
 }
