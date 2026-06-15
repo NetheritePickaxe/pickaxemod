@@ -16,9 +16,6 @@ public class ModItems {
     public static final DeferredItem<Item> SHIT =
             ITEMS.register("shit", () -> new Item(new Item.Properties().food(ModFoods.SHIT)));
 
-    public static final DeferredItem<Item> EVERLASTING_SHIT =
-            ITEMS.register("everlasting_shit", () -> new Item(new Item.Properties().food(ModFoods.EVERLASTING_SHIT)));
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

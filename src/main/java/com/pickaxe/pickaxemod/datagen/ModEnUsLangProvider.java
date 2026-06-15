@@ -17,7 +17,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add(ModItems.PICKAXE_E.get(), "pickaxe_e");
         add(ModItems.SHIT.get(), "shit");
-        add(ModItems.EVERLASTING_SHIT.get(), "everlasting shit");
 
         add(ModBlocks.PICKAXE_BLOCK.get(),"pickaxe block");
     }
