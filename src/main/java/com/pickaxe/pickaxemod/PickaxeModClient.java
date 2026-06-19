@@ -12,12 +12,14 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = PickaxeMod.MODID, dist = Dist.CLIENT)
-// You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+// You can use EventBusSubscriber to automatically register all static methods in the class
+// annotated with @SubscribeEvent
 @EventBusSubscriber(modid = PickaxeMod.MODID, value = Dist.CLIENT)
 public class PickaxeModClient {
     public PickaxeModClient(ModContainer container) {
         // Allows NeoForge to create a config screen for this mod's configs.
-        // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
+        // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking
+        // on config.
         // Do not forget to add translations for your config options to the en_us.json file.
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
