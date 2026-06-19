@@ -7,17 +7,17 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class ModEnUsLangProvider extends LanguageProvider {
-    public ModEnUsLangProvider(PackOutput output) {
-        super(output, PickaxeMod.MODID, "en_us");
-    }
+  public ModEnUsLangProvider(PackOutput output) {
+    super(output, PickaxeMod.MODID, "en_us");
+  }
 
-    @Override
-    protected void addTranslations() {
-        add("itemGroup.pickaxemod.pickaxe_tab","Pickaxe Mod");
+  @Override
+  protected void addTranslations() {
+    add("itemGroup.pickaxemod.pickaxe_tab", "Pickaxe Mod");
 
-        add(ModItems.PICKAXE_E.get(), "pickaxe_e");
-        add(ModItems.SHIT.get(), "shit");
+    add(ModItems.PICKAXE_E.get(), "pickaxe_e");
+    add(ModItems.SHIT.get(), "shit");
 
-        add(ModBlocks.PICKAXE_BLOCK.get(),"pickaxe block");
-    }
+    add(ModBlocks.PICKAXE_BLOCK.get(), "pickaxe block");
+  }
 }

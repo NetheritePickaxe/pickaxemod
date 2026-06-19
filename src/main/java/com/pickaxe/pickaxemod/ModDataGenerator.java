@@ -1,6 +1,9 @@
 package com.pickaxe.pickaxemod;
 
 import com.pickaxe.pickaxemod.datagen.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -12,30 +15,40 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-
 @EventBusSubscriber(modid = PickaxeMod.MODID)
 public class ModDataGenerator {
-    @SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
-        DataGenerator generator = event.getGenerator();
-        PackOutput packOutput = generator.getPackOutput();
-        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+  @SubscribeEvent
+  public static void gatherData(GatherDataEvent event) {
+    DataGenerator generator = event.getGenerator();
+    PackOutput packOutput = generator.getPackOutput();
+    ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+    CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTablesProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
-        generator.addProvider(event.includeServer(), new ModRecipesProvider(packOutput, lookupProvider));
+    generator.addProvider(
+        event.includeServer(),
+        new LootTableProvider(
+            packOutput,
+            Collections.emptySet(),
+            List.of(
+                new LootTableProvider.SubProviderEntry(
+                    ModBlockLootTablesProvider::new, LootContextParamSets.BLOCK)),
+            lookupProvider));
+    generator.addProvider(
+        event.includeServer(), new ModRecipesProvider(packOutput, lookupProvider));
 
-        BlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
-        generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(),new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+    BlockTagsProvider blockTagsProvider =
+        new ModBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
+    generator.addProvider(event.includeServer(), blockTagsProvider);
+    generator.addProvider(
+        event.includeServer(),
+        new ModItemTagsProvider(
+            packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 
-        generator.addProvider(event.includeClient(), new ModItemModelsProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModEnUsLangProvider(packOutput));
-        generator.addProvider(event.includeClient(), new ModZhCnLangProvider(packOutput));
-    }
+    generator.addProvider(
+        event.includeClient(), new ModItemModelsProvider(packOutput, existingFileHelper));
+    generator.addProvider(
+        event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+    generator.addProvider(event.includeClient(), new ModEnUsLangProvider(packOutput));
+    generator.addProvider(event.includeClient(), new ModZhCnLangProvider(packOutput));
+  }
 }

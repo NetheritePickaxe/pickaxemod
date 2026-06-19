@@ -7,13 +7,13 @@ import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class ModItemModelsProvider extends ItemModelProvider {
-    public ModItemModelsProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, PickaxeMod.MODID, existingFileHelper);
-    }
+  public ModItemModelsProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+    super(output, PickaxeMod.MODID, existingFileHelper);
+  }
 
-    @Override
-    protected void registerModels() {
-        basicItem(ModItems.PICKAXE_E.get());
-        basicItem(ModItems.SHIT.get());
-    }
+  @Override
+  protected void registerModels() {
+    basicItem(ModItems.PICKAXE_E.get());
+    basicItem(ModItems.SHIT.get());
+  }
 }
