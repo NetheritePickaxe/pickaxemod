@@ -18,9 +18,10 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-//        dropSelf(ModBlocks.PICKAXE_BLOCK.get());
+        //        dropSelf(ModBlocks.PICKAXE_BLOCK.get());
         add(ModBlocks.PICKAXE_BLOCK.get(),
-                block -> createSilkTouchDispatchTable(block, applyExplosionCondition(block, LootItem.lootTableItem(Items.NETHERITE_BLOCK))));
+                block -> createSilkTouchDispatchTable(block,
+                        applyExplosionCondition(block, LootItem.lootTableItem(Items.NETHERITE_BLOCK))));
     }
 
     @Override

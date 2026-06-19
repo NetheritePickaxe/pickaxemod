@@ -8,8 +8,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.state.StateDefinition;
 
 public class ModDirectionalBlock extends HorizontalDirectionalBlock {
-    public static final MapCodec<ModDirectionalBlock> CODEC =
-            simpleCodec(ModDirectionalBlock::new);
+    public static final MapCodec<ModDirectionalBlock> CODEC = simpleCodec(ModDirectionalBlock::new);
 
     public ModDirectionalBlock(Properties properties) {
         super(properties);

@@ -12,11 +12,11 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.Supplier;
 
 public class ModCreativeModeTabs {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PickaxeMod.MODID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister
+            .create(Registries.CREATIVE_MODE_TAB, PickaxeMod.MODID);
 
-    public static final Supplier<CreativeModeTab> PICKAXE_TAB =
-            CREATIVE_MODE_TABS.register("pickaxe_tab",() -> CreativeModeTab.builder()
+    public static final Supplier<CreativeModeTab> PICKAXE_TAB = CREATIVE_MODE_TABS.register("pickaxe_tab",
+            () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModItems.PICKAXE_E.get()))
                     .title(Component.translatable("itemGroup.pickaxemod.pickaxe_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
@@ -25,7 +25,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHIT);
                     }).build());
 
-    public static  void register(IEventBus eventBus) {
+    public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
 }

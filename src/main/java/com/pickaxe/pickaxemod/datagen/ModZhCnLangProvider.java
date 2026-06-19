@@ -13,11 +13,11 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add("itemGroup.pickaxemod.pickaxe_tab","合金模组");
+        add("itemGroup.pickaxemod.pickaxe_tab", "合金模组");
 
-        add(ModItems.PICKAXE_E.get(),"合金搞e");
+        add(ModItems.PICKAXE_E.get(), "合金搞e");
         add(ModItems.SHIT.get(), "答辩");
 
-        add(ModBlocks.PICKAXE_BLOCK.get(),"合金方块");
+        add(ModBlocks.PICKAXE_BLOCK.get(), "合金方块");
     }
 }
