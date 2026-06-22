@@ -23,7 +23,6 @@ COMMIT_MSG_FIRST=$(echo "$COMMIT_MSG" | head -n 1 | cut -c1-100)
 case "$TRIGGER_EVENT" in
   push) TRIGGER_LABEL="代码推送" ;;
   pull_request) TRIGGER_LABEL="Pull Request" ;;
-  schedule) TRIGGER_LABEL="定时构建" ;;
   workflow_dispatch) TRIGGER_LABEL="手动触发" ;;
   *) TRIGGER_LABEL="$TRIGGER_EVENT" ;;
 esac

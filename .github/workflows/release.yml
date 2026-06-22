@@ -54,7 +54,7 @@ jobs:
           retention-days: 7
 
       - name: Send Feishu notification
-        if: always() && secrets.FEISHU_WEBHOOK_URL != ''
+        if: always()
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
           NOTIFY_STATUS: ${{ job.status }}
