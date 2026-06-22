@@ -23,6 +23,10 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      - name: Record start time
+        id: start
+        run: echo "start_time=$(date +%s)" >> $GITHUB_OUTPUT
+
       - name: Validate Gradle wrapper
         uses: gradle/actions/wrapper-validation@v4
 
@@ -52,3 +56,22 @@ jobs:
           name: pickaxe_mod-nightly-artifact
           path: build/libs/*.jar
           retention-days: 7
+
+      - name: Send Feishu notification
+        if: always() && secrets.FEISHU_WEBHOOK_URL != ''
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          NOTIFY_STATUS: ${{ job.status }}
+          TRIGGER_EVENT: ${{ github.event_name }}
+          BRANCH: ${{ github.ref_name }}
+          COMMIT_SHA: ${{ github.sha }}
+          COMMIT_MSG: ${{ github.event.head_commit.message || github.event.pull_request.title || '' }}
+          ACTOR: ${{ github.actor }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          end_time=$(date +%s)
+          duration=$(( end_time - ${{ steps.start.outputs.start_time }} ))
+          BUILD_DURATION=$(date -d@$duration -u +%M:%S)
+          export BUILD_DURATION
+          chmod +x .github/scripts/feishu-notify.sh
+          .github/scripts/feishu-notify.sh
