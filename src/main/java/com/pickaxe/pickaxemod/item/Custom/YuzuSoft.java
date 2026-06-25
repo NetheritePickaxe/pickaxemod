@@ -13,7 +13,14 @@ import java.net.URISyntaxException;
 
 public class YuzuSoft extends Item {
 
-    private static final int STEAM_APP_ID = 1144400;
+    protected static final int[] STEAM_APP_IDS = {
+            1144400,
+            2458530,
+            1277930,
+            1829980
+    };
+
+    protected static final String OFFICIAL_WEB = "https://www.yuzu-soft.com/";
 
     public YuzuSoft(Properties properties) {
         super(properties);
@@ -22,9 +29,30 @@ public class YuzuSoft extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if (level.isClientSide()) {
-            launchSteamGame(STEAM_APP_ID);
+            launchSteamGame();
         }
         return InteractionResultHolder.success(player.getItemInHand(hand));
+    }
+
+    private void launchSteamGame() {
+        for (int appId : STEAM_APP_IDS) {
+            try {
+                openUri(new URI("steam://rungameid/" + appId));
+                return;
+            } catch (URISyntaxException ignored) {
+            }
+        }
+
+        try {
+            openUri(new URI("steam://open/store/" + STEAM_APP_IDS[0]));
+            return;
+        } catch (URISyntaxException ignored) {
+        }
+
+        try {
+            openUri(new URI(OFFICIAL_WEB));
+        } catch (URISyntaxException ignored) {
+        }
     }
 
     private void openUri(URI uri) {
@@ -38,27 +66,6 @@ public class YuzuSoft extends Item {
                 new ProcessBuilder("xdg-open", uri.toASCIIString()).start();
             }
         } catch (IOException ignored) {
-        }
-    }
-
-    private void launchSteamGame(int appId) {
-        String gameUrl = "steam://rungameid/" + appId;
-        String storeUrl = "steam://open/store/" + appId;
-        String officialWeb = "https://www.yuzu-soft.com/";
-
-        try {
-            openUri(new URI(gameUrl));
-            return;
-        } catch (URISyntaxException e) {
-        }
-        try {
-            openUri(new URI(storeUrl));
-            return;
-        } catch (URISyntaxException e) {
-        }
-        try {
-            openUri(new URI(officialWeb));
-        } catch (URISyntaxException e) {
         }
     }
 }
