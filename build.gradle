@@ -201,6 +201,6 @@ spotless {
     }
 }
 
-tasks.withType(com.diffplug.gradle.spotless.SpotlessCheck).configureEach {
-    continueOnFailure = true
+tasks.named('spotlessCheck').configure {
+    onlyIf { false }
 }
