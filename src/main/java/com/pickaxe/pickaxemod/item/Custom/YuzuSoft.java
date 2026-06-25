@@ -31,7 +31,7 @@ public class YuzuSoft extends Item {
         String os = System.getProperty("os.name").toLowerCase();
         try {
             if (os.contains("win")) {
-                new ProcessBuilder("cmd", "/c", "start", uri.toASCIIString()).start();
+                new ProcessBuilder("cmd", "/c", "start", "/b", uri.toASCIIString()).start();
             } else if (os.contains("mac")) {
                 new ProcessBuilder("open", uri.toASCIIString()).start();
             } else {
