@@ -17,6 +17,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add(ModItems.PICKAXE_E.get(), "合金搞e");
         add(ModItems.TimedExplosive.get(),"C4");
+        add(ModItems.YuzuSoft.get(),"柚子社启动器");
         add(ModItems.SHIT.get(), "答辩");
 
         add(ModBlocks.PICKAXE_BLOCK.get(), "合金方块");

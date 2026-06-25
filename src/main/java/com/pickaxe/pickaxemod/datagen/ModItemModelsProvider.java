@@ -22,6 +22,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(ModItems.PICKAXE_E.get());
         c4Item(ModItems.TimedExplosive);
+        basicItem(ModItems.YuzuSoft.get());
         basicItem(ModItems.SHIT.get());
     }
 }

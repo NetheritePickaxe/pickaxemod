@@ -2,6 +2,7 @@ package com.pickaxe.pickaxemod.item;
 
 import com.pickaxe.pickaxemod.PickaxeMod;
 import com.pickaxe.pickaxemod.item.Custom.TimedExplosive;
+import com.pickaxe.pickaxemod.item.Custom.YuzuSoft;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -16,6 +17,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> TimedExplosive =
             ITEMS.register("timed_explosive", () -> new TimedExplosive(new Item.Properties()));
+
+    public static final DeferredItem<Item> YuzuSoft =
+            ITEMS.register("yuzusoft", () -> new YuzuSoft(new Item.Properties()));
 
     public static final DeferredItem<Item> SHIT =
             ITEMS.register("shit", () -> new Item(new Item.Properties().food(ModFoods.SHIT)));

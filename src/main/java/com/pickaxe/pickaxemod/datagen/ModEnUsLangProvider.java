@@ -17,6 +17,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add(ModItems.PICKAXE_E.get(), "pickaxe_e");
         add(ModItems.TimedExplosive.get(),"C4");
+        add(ModItems.YuzuSoft.get(),"YuzuSoft Launcher");
         add(ModItems.SHIT.get(), "shit");
 
         add(ModBlocks.PICKAXE_BLOCK.get(), "pickaxe block");
