@@ -16,6 +16,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("itemGroup.pickaxemod.pickaxe_tab", "Pickaxe Mod");
 
         add(ModItems.PICKAXE_E.get(), "pickaxe_e");
+        add(ModItems.TimedExplosive.get(),"C4");
         add(ModItems.SHIT.get(), "shit");
 
         add(ModBlocks.PICKAXE_BLOCK.get(), "pickaxe block");

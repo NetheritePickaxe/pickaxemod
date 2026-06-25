@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                             (itemDisplayParameters, output) -> {
                                 output.accept(ModItems.PICKAXE_E);
                                 output.accept(ModBlocks.PICKAXE_BLOCK);
+                                output.accept(ModItems.TimedExplosive);
                                 output.accept(ModItems.SHIT);
                             })
                     .build());

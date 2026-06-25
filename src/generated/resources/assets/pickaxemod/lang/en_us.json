@@ -1,7 +1,7 @@
 {
   "block.pickaxemod.pickaxe_block": "pickaxe block",
-  "item.pickaxemod.everlasting_shit": "everlasting shit",
   "item.pickaxemod.pickaxe_e": "pickaxe_e",
   "item.pickaxemod.shit": "shit",
+  "item.pickaxemod.timed_explosive": "C4",
   "itemGroup.pickaxemod.pickaxe_tab": "Pickaxe Mod"
 }
