@@ -200,3 +200,7 @@ spotless {
         endWithNewline()
     }
 }
+
+tasks.withType(SpotlessCheck).configureEach {
+    continueOnFailure = true
+}

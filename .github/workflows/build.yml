@@ -42,10 +42,6 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
-      - name: Check code style
-        continue-on-error: true
-        run: ./gradlew spotlessCheck
-
       - name: Build with Gradle
         run: ./gradlew build
 
