@@ -192,6 +192,7 @@ idea {
     }
 }
 
+// spotless check is non-fatal - won't block build
 spotless {
     java {
         target 'src/*/java/**/*.java'
@@ -201,6 +202,8 @@ spotless {
     }
 }
 
-tasks.named('spotlessCheck').configure {
-    onlyIf { false }
+// Make spotless check non-fatal by removing it from build task dependencies
+tasks.named('build').configure {
+    dependsOn.remove('spotlessJavaCheck')
+    dependsOn.remove('spotlessCheck')
 }
