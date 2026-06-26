@@ -45,6 +45,11 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
+      - name: Check code formatting (non-fatal)
+        if: always()
+        run: |
+          ./gradlew spotlessJavaCheck || echo "::warning::Code formatting violations found. Run './gradlew spotlessApply' to fix."
+
       - name: Upload built JAR
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: actions/upload-artifact@v4

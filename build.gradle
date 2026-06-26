@@ -202,8 +202,8 @@ spotless {
     }
 }
 
-// Make spotless check non-fatal by removing it from build task dependencies
-tasks.named('build').configure {
-    dependsOn.remove('spotlessJavaCheck')
-    dependsOn.remove('spotlessCheck')
+// spotless check is non-fatal - only runs when explicitly invoked
+def isSpotlessInvoked = gradle.startParameter.taskNames.any { it.toLowerCase().contains('spotless') }
+tasks.matching { it.name in ['spotlessJavaCheck', 'spotlessCheck'] }.configureEach {
+    onlyIf { isSpotlessInvoked }
 }
